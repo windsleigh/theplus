@@ -1,5 +1,5 @@
 <template>
-  <div class="component-container">home</div>
+  <div id="home"  class="component-container">home</div>
 </template>
 <style scoped>
 .component-container {
