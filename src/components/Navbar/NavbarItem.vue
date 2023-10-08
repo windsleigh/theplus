@@ -5,31 +5,54 @@
         <img src="src/assets/logo-p-50.png" alt="The Plus" />
       </router-link>
     </div>
-    <div class="nav-links">
+    <div class="nav-links desktop-nav">
       <router-link to="/#home">Home</router-link>
       <router-link to="/#about">About</router-link>
       <router-link to="/#services">Services</router-link>
       <router-link to="/#contact">Contact</router-link>
     </div>
+    <!-- ...existing template... -->
+    <button class="hamburger mobile-nav" @click="toggleSidebar">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+    <div :class="['sidebar', sidebarClass]">
+      <!-- Close button -->
+      <button class="close-button" @click="toggleSidebar">
+        <svg height="24px" width="24px" viewBox="0 0 24 24">
+          <line x1="1" y1="23" x2="23" y2="1" stroke="white" stroke-width="2" />
+          <line x1="1" y1="1" x2="23" y2="23" stroke="white" stroke-width="2" />
+        </svg>
+      </button>
+      <div class="sidebar-links">
+        <router-link to="/#home" @click="toggleSidebar">Home</router-link>
+        <router-link to="/#about" @click="toggleSidebar">About</router-link>
+        <router-link to="/#services" @click="toggleSidebar"
+          >Services</router-link
+        >
+        <router-link to="/#contact" @click="toggleSidebar">Contact</router-link>
+      </div>
+    </div>
+    <!-- ...existing template... -->
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, computed } from "vue";
 
-const isScrolled = ref<boolean>(false);
+const isScrolled = ref(false);
+const isSidebarOpen = ref(false);
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0;
 };
 
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
+const toggleSidebar = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+};
 
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
 </script>
 
 <style scoped>
@@ -46,29 +69,107 @@ onUnmounted(() => {
   background-color: transparent;
   transition: background-color 0.5s ease-in-out;
   z-index: 100;
-  border-top: 2px solid #ffffff; /* Top border */
-  border-bottom: 2px solid #ffffff; /* Bottom border */
 }
 
 .logo {
   margin-left: 2vw;
+  margin-top: 0.5rem;
 }
 
 .nav-links {
   margin-right: 20px;
   display: flex;
-  gap: 20px; /* Adds space between the links */
+  gap: 20px;
+  font-size: 1.3rem;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .router-link-active,
 .router-link-exact-active,
 .router-link-active:hover,
 .router-link-exact-active:hover {
-  color: white; /* Sets the color to white */
-  text-decoration: none; /* Removes the underline */
+  color: white;
+  text-decoration: none;
 }
 
 .navbar-container.scrolled {
+  background-color: #000a0c;
+  opacity: 0.8;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  border: none; /* Added */
+  background: none; /* Added */
+  cursor: pointer; /* Added */
+}
+
+.bar {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+.sidebar {
+  position: absolute; /* Changed from fixed */
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 80vw;
   background-color: #0f2226;
+  transition: right 0.5s ease-in-out;
+  z-index: 99;
+  opacity: 0.8;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar.closed {
+  right: -100%;
+}
+
+/* Updated close button style */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  z-index: 101;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.sidebar-links {
+  padding: auto;
+  padding-top: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 2rem;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.sidebar-links a:hover {
+  color: #ff9900; /* Change the color on hover to your desired color */
+  background-color: #000; /* Change the background color on hover to your desired color */
 }
 </style>
