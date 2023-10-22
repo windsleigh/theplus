@@ -2,18 +2,40 @@
   <div class="component-container">
     <ul class="timeline">
       <li class="timeline-item">
+        <img
+          src="src/assets/timeline_assets/timeline_1.png"
+          alt="Timeline Step 1"
+          class="timeline-image"
+        />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>Agenda una Reunión</h3>
+          <h3>
+            <img
+              src="src/assets/timeline_assets/icon_1.png"
+              alt="Icon 1"
+              class="title-icon"
+            />Agenda una Reunión
+          </h3>
           <p>
             Planifique una reunión para discutir sus necesidades y objetivos.
           </p>
         </div>
       </li>
       <li class="timeline-item">
+        <img
+          src="src/assets/timeline_assets/timeline_2.png"
+          alt="Timeline Step 2"
+          class="timeline-image"
+        />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>Contactanos</h3>
+          <h3>
+            <img
+              src="src/assets/timeline_assets/icon_2.png"
+              alt="Icon 2"
+              class="title-icon"
+            />Contactanos
+          </h3>
           <p>
             Póngase en contacto con nosotros para obtener más información sobre
             nuestros servicios.
@@ -21,9 +43,20 @@
         </div>
       </li>
       <li class="timeline-item">
+        <img
+          src="src/assets/timeline_assets/timeline_3.png"
+          alt="Timeline Step 3"
+          class="timeline-image"
+        />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>Reciba un Plan Personalizado</h3>
+          <h3>
+            <img
+              src="src/assets/timeline_assets/icon_3.png"
+              alt="Icon 3"
+              class="title-icon"
+            />Recibe un Plan Personalizado
+          </h3>
           <p>
             Reciba un plan personalizado diseñado específicamente para alcanzar
             sus metas.
@@ -31,9 +64,21 @@
         </div>
       </li>
       <li class="timeline-item">
+        <img
+          src="src/assets/timeline_assets/timeline_4.png"
+          alt="Timeline Step 4"
+          class="timeline-image"
+        />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>Aumenta tus Ingresos</h3>
+          <h3>
+            <img
+              src="src/assets/timeline_assets/icon_4.png"
+              alt="Icon 4"
+              class="title-icon"
+            />
+            Aumenta tus Ingresos
+          </h3>
           <p>
             Comienza a aumentar sus ingresos con nuestros servicios
             especializados.
@@ -41,6 +86,9 @@
         </div>
       </li>
     </ul>
+    <router-link to="/#contact">
+      <button class="agenda-button">Agenda tu Reunión</button>
+    </router-link>
   </div>
 </template>
 
@@ -56,11 +104,14 @@ export default defineComponent({
   setup() {
     onMounted(() => {
       gsap.utils.toArray(".timeline-item").forEach((item, index) => {
-        gsap.from(item as HTMLElement, {
+        const element = item as HTMLElement;
+        gsap.from(element.querySelector(".text-content") as HTMLElement, {
           autoAlpha: 0, // This will fade and un-fade the element
+          x: 100, // This will start the text 100px to the right
+          duration: 1, // Increase this value to slow down the animation, e.g., 1.5 for 1.5 seconds
           scrollTrigger: {
-            trigger: item,
-            start: "top 67%", // Adjust these values to control when the animation starts
+            trigger: element,
+            start: "top 60%", // Adjust these values to control when the animation starts
             end: "bottom 20%", // and ends relative to the viewport
             toggleActions: "play none none reverse",
           },
@@ -73,18 +124,18 @@ export default defineComponent({
 
 <style scoped>
 .component-container {
-  height: 90vh;
+  height: 220vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 1.2rem;
-  border-top: 2px solid #ffffff; /* Top border */
-  border-bottom: 2px solid #ffffff; /* Bottom border */
-  background: linear-gradient(to right, #4c8389, #0f2226);
-  opacity: 0.9;
-  backdrop-filter: blur(12vmax);
+  font-size: 2rem;
+  background: linear-gradient(to right, #1c5e5e, #1e3d41, #0f2226);
+  backdrop-filter: blur(
+    100px
+  ); /* Adjust this value to control the level of blur */
+  opacity: 1; /* Optional: This will make the background slightly transparent, which can enhance the blur effect */
 }
 
 .timeline {
@@ -99,7 +150,7 @@ export default defineComponent({
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0px; /* Adjust this value to position the line relative to the indicators */
+  left: 400px; /* Adjust this value to position the line relative to the indicators */
   width: 2px;
   background-color: #ffffff;
 }
@@ -107,7 +158,7 @@ export default defineComponent({
 .timeline-item {
   display: flex;
   align-items: center;
-  margin-bottom: 100px; /* Adjust spacing between items */
+  margin-bottom: 250px; /* Adjust spacing between items */
   position: relative; /* This makes sure the timeline-indicator is positioned relative to this item */
 }
 
@@ -117,13 +168,49 @@ export default defineComponent({
   background-color: #6ebaba;
   border-radius: 50%;
   position: absolute;
-  left: 0; /* This positions the indicator at the start of the timeline-item */
+  left: 400px; /* This positions the indicator at the start of the timeline-item */
   transform: translateX(-50%); /* This centers the indicator on the line */
 }
 
 .text-content {
-  margin-left: 30px;
+  margin-left: 450px;
   width: 50%;
   /* Add any additional styles for the text content here */
+}
+.timeline-image {
+  position: absolute;
+  left: 40px; /* Adjust this value to position the images to the left of the indicators */
+  width: 350px; /* Adjust this value to control the width of the images */
+  height: auto; /* This will maintain the aspect ratio of the images */
+  transform: translateY(
+    0%
+  ); /* This will vertically center the images with the indicators */
+}
+.title-icon {
+  vertical-align: middle;
+  margin-right: 8px; /* Adjust this value to control spacing between the icon and the text */
+  width: 40px; /* Adjust this value to control the width of the icons */
+  height: auto; /* This will maintain the aspect ratio of the icons */
+}
+
+.agenda-button {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  color: white;
+  background-color: #6ebaba;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.agenda-button:hover {
+  background-color: #4c8389;
 }
 </style>

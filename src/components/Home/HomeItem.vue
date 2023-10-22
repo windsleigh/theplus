@@ -93,7 +93,7 @@ onMounted(() => {
   aspect-ratio: 1;
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(to right, rgb(0, 255, 242), rgb(251, 255, 0));
+  background: linear-gradient(to right, rgb(0, 255, 242), rgb(21, 255, 0));
   animation: rotate 2s infinite;
   opacity: 0.9;
   z-index: 1;
