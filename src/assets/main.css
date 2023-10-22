@@ -27,14 +27,13 @@ body {
 
 /* Set background color */
 body {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 /* Make the root Vue app take up the full viewport */
 #app {
   min-height: 100%;
   min-width: 100%;
-
 }
 
 html {

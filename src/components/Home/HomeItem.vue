@@ -84,6 +84,7 @@ onMounted(() => {
   font-size: xx-large;
   position: relative;
   background-color: #00181d;
+  z-index: 1;
 }
 
 .blob {
@@ -92,7 +93,7 @@ onMounted(() => {
   aspect-ratio: 1;
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(to right, rgb(0, 255, 242), rgb(234, 224, 255));
+  background: linear-gradient(to right, rgb(0, 255, 242), rgb(251, 255, 0));
   animation: rotate 2s infinite;
   opacity: 0.9;
   z-index: 1;
@@ -100,7 +101,7 @@ onMounted(() => {
 
 #blob1 {
   left: 50%;
-  top: 50%;
+  top: 35%;
   transform: translate(-50%, -50%);
 }
 
@@ -129,7 +130,7 @@ onMounted(() => {
     transform: rotate(0deg);
   }
   50% {
-    transform: scale(1, 2);
+    transform: scale(1, 1.25);
   }
   to {
     transform: rotate(360deg);

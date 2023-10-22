@@ -11,14 +11,12 @@
       <router-link to="/#services">Services</router-link>
       <router-link to="/#contact">Contact</router-link>
     </div>
-    <!-- ...existing template... -->
     <button class="hamburger mobile-nav" @click="toggleSidebar">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </button>
     <div :class="['sidebar', sidebarClass]">
-      <!-- Close button -->
       <button class="close-button" @click="toggleSidebar">
         <svg height="24px" width="24px" viewBox="0 0 24 24">
           <line x1="1" y1="23" x2="23" y2="1" stroke="white" stroke-width="2" />
@@ -34,7 +32,6 @@
         <router-link to="/#contact" @click="toggleSidebar">Contact</router-link>
       </div>
     </div>
-    <!-- ...existing template... -->
   </div>
 </template>
 
@@ -77,11 +74,40 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
 }
 
 .nav-links {
+  position: relative;
   margin-right: 20px;
-  display: flex;
+  display: none;
   gap: 20px;
   font-size: 1.3rem;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: rgb(0, 255, 255);
 }
 
 .router-link-active,
@@ -101,9 +127,9 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
   display: none;
   flex-direction: column;
   gap: 4px;
-  border: none; /* Added */
-  background: none; /* Added */
-  cursor: pointer; /* Added */
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .bar {
@@ -112,17 +138,26 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
   background-color: white;
 }
 
-@media (max-width: 768px) {
-  .desktop-nav {
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+  }
+  .hamburger {
     display: none;
   }
-  .mobile-nav {
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
     display: flex;
   }
 }
 
 .sidebar {
-  position: absolute; /* Changed from fixed */
+  position: absolute;
   top: 0;
   right: -100%;
   height: 100vh;
@@ -143,7 +178,6 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
   right: -100%;
 }
 
-/* Updated close button style */
 .close-button {
   position: absolute;
   top: 10px;
@@ -164,12 +198,15 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 40px;
   font-size: 2rem;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
+
 .sidebar-links a:hover {
-  color: #ff9900; /* Change the color on hover to your desired color */
-  background-color: #000; /* Change the background color on hover to your desired color */
+  color: #ffffff;
+  background-color: #000;
+  border-radius: 16px;
+  padding: 8px;
 }
 </style>
