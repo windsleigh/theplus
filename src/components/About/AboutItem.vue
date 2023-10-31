@@ -22,6 +22,11 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   mounted() {
     this.setupTealseaScrollAnimation();
+    this.adjustImageScale(); // call the function on mount
+    window.addEventListener("resize", this.adjustImageScale); // add resize listener
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.adjustImageScale); // clean up resize listener
   },
   methods: {
     setupTealseaScrollAnimation() {
@@ -34,6 +39,10 @@ export default {
           scrub: true,
         },
       });
+    },
+    adjustImageScale() {
+      const scaleValue = window.innerWidth < 768 ? 2.5 : 1.9; // adjust scale value based on window width
+      gsap.set(".tealsea-image", { scale: scaleValue }); // set the scale value using GSAP
     },
   },
 };
@@ -98,6 +107,7 @@ export default {
   font-size: 1.8em;
   margin-bottom: 0.5em; /* adds space between title and subtitle */
   text-align: center;
+  /* color: #0f2226; */
 }
 
 .body {
@@ -105,5 +115,42 @@ export default {
   font-weight: 400;
   text-align: center;
   margin-top: 1em;
+}
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .component-container {
+    height: 90vh;
+  }
+
+  .tealsea-container {
+    height: 90vh;
+  }
+
+  .text-container {
+    left: 2%;
+    right: 2%;
+    transform: translate(0, -50%);
+    padding: 10px;
+  }
+
+  .tealsea-text,
+  .tealsea-text {
+    font-size: 1.5em;
+  }
+
+  .body {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .tealsea-text,
+  .tealsea-text {
+    font-size: 1.2em;
+  }
+
+  .body {
+    font-size: 1em;
+  }
 }
 </style>

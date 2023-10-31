@@ -11,11 +11,16 @@
       <router-link to="/#services">Services</router-link>
       <router-link to="/#contact">Contact</router-link>
     </div>
-    <button class="hamburger mobile-nav" @click="toggleSidebar">
+    <button
+      class="hamburger mobile-nav"
+      @click="toggleSidebar"
+      v-show="!isSidebarOpen"
+    >
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
     </button>
+
     <div :class="['sidebar', sidebarClass]">
       <button class="close-button" @click="toggleSidebar">
         <svg height="24px" width="24px" viewBox="0 0 24 24">
@@ -36,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, onMounted, onUnmounted, computed } from "vue";
 
 const isScrolled = ref(false);
 const isSidebarOpen = ref(false);
@@ -44,6 +49,14 @@ const isSidebarOpen = ref(false);
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 0;
 };
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 const toggleSidebar = () => {
   isSidebarOpen.value = !isSidebarOpen.value;
@@ -53,6 +66,7 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 .navbar-container {
   position: fixed;
   top: 0;
@@ -66,8 +80,13 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
   background-color: transparent;
   transition: background-color 0.5s ease-in-out;
   z-index: 100;
+  font-family: "Poppins", sans-serif;
 }
 
+.navbar-container.scrolled {
+  background-color: #000;
+  opacity: 0.8;
+}
 .logo {
   margin-left: 2vw;
   margin-top: 0.5rem;

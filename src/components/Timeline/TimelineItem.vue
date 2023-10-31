@@ -1,5 +1,10 @@
 <template>
   <div class="component-container">
+    <div class="text-titles">
+      <h4>INTRODUCIENDO</h4>
+      <h1 class="title-item">UNA ACTUALIZACIÓN <u>MASIVA</u></h1>
+      <h3><u>El plus</u> que tu empresa necesita</h3>
+    </div>
     <ul class="timeline">
       <li class="timeline-item">
         <img
@@ -9,15 +14,16 @@
         />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>
+          <h3 class="title">
             <img
-              src="src/assets/timeline_assets/icon_1.png"
+              src="src/assets/timeline_assets/icon_2.png"
               alt="Icon 1"
               class="title-icon"
-            />Agenda una Reunión
+            />Contactanos
           </h3>
-          <p>
-            Planifique una reunión para discutir sus necesidades y objetivos.
+          <p class="text-body">
+            Póngase en contacto con nosotros para obtener más información sobre
+            nuestros servicios.
           </p>
         </div>
       </li>
@@ -29,16 +35,15 @@
         />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>
+          <h3 class="title">
             <img
-              src="src/assets/timeline_assets/icon_2.png"
+              src="src/assets/timeline_assets/icon_1.png"
               alt="Icon 2"
               class="title-icon"
-            />Contactanos
+            />Agenda una Reunión
           </h3>
-          <p>
-            Póngase en contacto con nosotros para obtener más información sobre
-            nuestros servicios.
+          <p class="text-body">
+            Planifique una reunión para discutir sus necesidades y objetivos.
           </p>
         </div>
       </li>
@@ -50,14 +55,14 @@
         />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>
+          <h3 class="title">
             <img
               src="src/assets/timeline_assets/icon_3.png"
               alt="Icon 3"
               class="title-icon"
             />Recibe un Plan Personalizado
           </h3>
-          <p>
+          <p class="text-body">
             Reciba un plan personalizado diseñado específicamente para alcanzar
             sus metas.
           </p>
@@ -71,7 +76,7 @@
         />
         <div class="timeline-indicator"></div>
         <div class="text-content">
-          <h3>
+          <h3 class="title">
             <img
               src="src/assets/timeline_assets/icon_4.png"
               alt="Icon 4"
@@ -79,7 +84,7 @@
             />
             Aumenta tus Ingresos
           </h3>
-          <p>
+          <p class="text-body">
             Comienza a aumentar sus ingresos con nuestros servicios
             especializados.
           </p>
@@ -103,16 +108,48 @@ export default defineComponent({
   name: "Timeline",
   setup() {
     onMounted(() => {
-      gsap.utils.toArray(".timeline-item").forEach((item, index) => {
+      const smallScreenMatchMedia = window.matchMedia("(max-width: 600px)");
+
+      gsap.utils.toArray(".timeline-item").forEach((item) => {
         const element = item as HTMLElement;
+
+        // Different animation parameters based on screen size
+        const animationParams = smallScreenMatchMedia.matches
+          ? {
+              x: 0,
+              y: 0,
+              start: "top 80%",
+              end: "bottom 30%",
+            }
+          : {
+              x: 100, // changed from 100 to -100
+              y: 500,
+              start: "top 60%",
+              end: "bottom 20%",
+            };
+
+        // Existing animation for text-content
         gsap.from(element.querySelector(".text-content") as HTMLElement, {
-          autoAlpha: 0, // This will fade and un-fade the element
-          x: 100, // This will start the text 100px to the right
-          duration: 1, // Increase this value to slow down the animation, e.g., 1.5 for 1.5 seconds
+          autoAlpha: 0,
+          x: animationParams.x,
+          duration: 1,
           scrollTrigger: {
             trigger: element,
-            start: "top 60%", // Adjust these values to control when the animation starts
-            end: "bottom 20%", // and ends relative to the viewport
+            start: animationParams.start,
+            end: animationParams.end,
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        // New animation for text-body
+        gsap.from(element.querySelector(".text-body") as HTMLElement, {
+          autoAlpha: 0,
+          y: animationParams.y,
+          duration: 0.5,
+          scrollTrigger: {
+            trigger: element,
+            start: animationParams.start,
+            end: animationParams.end,
             toggleActions: "play none none reverse",
           },
         });
@@ -123,12 +160,14 @@ export default defineComponent({
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500&display=swap");
 .component-container {
-  height: 220vh;
+  height: 230vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: white;
   font-size: 2rem;
   background: linear-gradient(to right, #1c5e5e, #1e3d41, #0f2226);
@@ -136,6 +175,20 @@ export default defineComponent({
     100px
   ); /* Adjust this value to control the level of blur */
   opacity: 1; /* Optional: This will make the background slightly transparent, which can enhance the blur effect */
+}
+
+.text-titles {
+  margin-bottom: 150px;
+  font-size: 3rem;
+  align-items: center;
+  text-align: center;
+}
+.title-item {
+  color: aquamarine;
+  font-family: "Anton", sans-serif;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 6rem;
 }
 
 .timeline {
@@ -149,8 +202,8 @@ export default defineComponent({
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
-  left: 400px; /* Adjust this value to position the line relative to the indicators */
+  bottom: 100px;
+  left: 900px; /* Adjust this value to position the line relative to the indicators */
   width: 2px;
   background-color: #ffffff;
 }
@@ -168,19 +221,36 @@ export default defineComponent({
   background-color: #6ebaba;
   border-radius: 50%;
   position: absolute;
-  left: 400px; /* This positions the indicator at the start of the timeline-item */
+  left: 900px; /* This positions the indicator at the start of the timeline-item */
   transform: translateX(-50%); /* This centers the indicator on the line */
 }
 
 .text-content {
-  margin-left: 450px;
+  margin-left: 950px;
+  padding: 20px;
   width: 50%;
   /* Add any additional styles for the text content here */
 }
+
+.text-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: #4c83898a;
+  backdrop-filter: blur(2px);
+  border-radius: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .timeline-image {
   position: absolute;
-  left: 40px; /* Adjust this value to position the images to the left of the indicators */
-  width: 350px; /* Adjust this value to control the width of the images */
+  left: 150px; /* Adjust this value to position the images to the left of the indicators */
+  width: 600px; /* Adjust this value to control the width of the images */
   height: auto; /* This will maintain the aspect ratio of the images */
   transform: translateY(
     0%
@@ -195,7 +265,7 @@ export default defineComponent({
 
 .agenda-button {
   position: absolute;
-  bottom: 80px;
+  bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -212,5 +282,97 @@ export default defineComponent({
 
 .agenda-button:hover {
   background-color: #4c8389;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.6rem;
+  color: #6ebaba;
+}
+
+@media (max-width: 1200px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 220vh;
+  }
+}
+
+@media (max-width: 937px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 250vh;
+  }
+  .timeline-image {
+    /* Hide the images */
+    width: 350px;
+    left: 40px;
+  }
+  .timeline-indicator {
+    left: 400px;
+  }
+  .timeline::before {
+    left: 400px;
+  }
+  .text-content {
+    margin-left: 450px;
+  }
+}
+
+@media (max-width: 880px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 150vh;
+  }
+  .timeline-image {
+    /* Hide the images */
+    display: none;
+  }
+  .timeline::before,
+  .timeline-indicator {
+    /* Adjust the position of the timeline line and indicators */
+    left: 50px;
+  }
+  .timeline-item {
+    /* Adjust spacing between items */
+    margin-bottom: 100px;
+  }
+  .text-content {
+    /* Adjust margin for text content */
+    font-size: large;
+    margin-left: 100px;
+    width: 70%;
+  }
+  .title,
+  .text-body {
+    /* Increase text size for better readability */
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-image {
+    /* Hide the images */
+    display: none;
+  }
+  .timeline::before,
+  .timeline-indicator {
+    /* Adjust the position of the timeline line and indicators */
+    left: 50px;
+  }
+  .timeline-item {
+    /* Adjust spacing between items */
+    margin-bottom: 100px;
+  }
+  .text-content {
+    /* Adjust margin for text content */
+    font-size: large;
+    margin-left: 100px;
+    width: 70%;
+  }
+  .title,
+  .text-body {
+    /* Increase text size for better readability */
+    font-size: 1.2em;
+  }
 }
 </style>

@@ -25,6 +25,4 @@ import TestimonialItem from "./components/Testimonials/TestimonialItem.vue";
 import FooterItem from "./components/Footer/FooterItem.vue";
 </script>
 
-<style>
-
-</style>
+<style></style>
