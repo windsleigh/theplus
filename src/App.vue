@@ -6,8 +6,8 @@
       <AboutItem />
       <TimelineItem />
       <ServicesItem />
-      <ContactItem />
       <TestimonialItem />
+      <ContactItem />
       <FooterItem />
     </div>
   </div>

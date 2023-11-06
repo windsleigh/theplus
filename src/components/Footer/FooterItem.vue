@@ -10,20 +10,25 @@
         <div class="footerLinks">
           <!-- Contact info -->
           <div class="footerLinksDiv">
-            <h4>Get in touch</h4>
-            <p>theplus@contact.com</p>
+            <h4>Contactanos</h4>
+            <p>contacto@theplus.com</p>
           </div>
           <!-- Social media links -->
           <div class="footerLinksDiv">
-            <h4>Connect</h4>
+            <h4>Conectate</h4>
             <div class="socialmedia">
-              <a href="https://www.linkedin.com">
-                <i class="fab fa-linkedin icon"></i>
-                LinkedIn
-              </a>
-              <a href="https://github.com/">
+              <a href="https://www.instagram.com/theplusagc/">
                 <i class="fab fa-instagram icon"></i>
-                Instagram
+                Instagram/ThePlusAGC
+              </a>
+
+              <a href="https://www.linkedin.com/company/the-plus-agc/">
+                <i class="fab fa-linkedin icon"></i>
+                LinkedIn/ThePlusAgc
+              </a>
+              <a href="">
+                <i class="fab fa-whatsapp icon"></i>
+                +56 9 1234 5678
               </a>
             </div>
           </div>

@@ -4,8 +4,20 @@
       <div class="text-container">
         <h1 class="tealsea-text">Somos una empresa de marketing digital</h1>
         <div class="body">
-          Potenciamos tu negocio para que alcances a una mayor cantidad de
-          clientes dandole el plus que necesita tu marca
+          <div class="p1">
+            Olvidate del área digital de tu empresa y dejala en nuestras manos.
+            Nosotros potenciamos tu negocios para que alcances a una mayor
+            cantidad de clientes.
+          </div>
+          <div class="p2">
+            Gestionamos, Desarrollamos y Creamos una estrategia digital que
+            permite aumentar los ingresos de tu negocio/marca
+          </div>
+          <div class="indicator"></div>
+          <div class="p3">
+            Elaboramos piezas gráficas para mantener activas tus cuentas y saber
+            que es lo que tus clientes prefieren
+          </div>
         </div>
       </div>
       <img src="@/assets/whitewall.jpg" alt="tealsea" class="tealsea-image" />
@@ -41,7 +53,7 @@ export default {
       });
     },
     adjustImageScale() {
-      const scaleValue = window.innerWidth < 768 ? 2.5 : 1.9; // adjust scale value based on window width
+      const scaleValue = window.innerWidth < 768 ? 2.5 : 1.8; // adjust scale value based on window width
       gsap.set(".tealsea-image", { scale: scaleValue }); // set the scale value using GSAP
     },
   },
@@ -49,7 +61,7 @@ export default {
 </script>
 <style scoped>
 .component-container {
-  height: 70vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -63,7 +75,7 @@ export default {
 
 .tealsea-container {
   overflow: hidden;
-  height: 70vh; /* or however tall you want the visible area to be */
+  height: 90vh; /* or however tall you want the visible area to be */
   position: relative;
 }
 
@@ -84,8 +96,11 @@ export default {
   width: 100vw;
   height: auto;
   z-index: 1;
-  transform: scale(1.9);
-  z-index: 1;
+  transform: scale(1.3);
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .text-container {
@@ -111,11 +126,69 @@ export default {
 }
 
 .body {
+  position: relative; /* Add this to position your indicator relative to .body */
   font-size: 1.4em;
   font-weight: 400;
   text-align: center;
   margin-top: 1em;
 }
+
+.indicator {
+  width: 20px;
+  height: 20px;
+  background-color: #6ebaba;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%; /* Center horizontally */
+  top: 57%; /* Position at the bottom of the .body container */
+  transform: translate(
+    -50%,
+    calc(0.5em + 1vh)
+  ); /* Center and move down a bit */
+  z-index: 3;
+}
+.p1 {
+  margin-bottom: 1em;
+}
+.p2 {
+  margin-bottom: 1em;
+}
+@media (max-width: 1700px) {
+  .indicator {
+    top: 63%;
+  }
+}
+@media (max-width: 1360px) {
+  .indicator {
+    top: 67%;
+  }
+}
+@media (max-width: 1200px) {
+  .indicator {
+    top: 61%;
+  }
+}
+@media (max-width: 1150px) {
+  .indicator {
+    top: 64%;
+  }
+}
+@media (max-width: 971px) {
+  .indicator {
+    top: 67%;
+  }
+}
+@media (max-width: 960px) {
+  .indicator {
+    top: 69%;
+  }
+}
+@media (max-width: 840px) {
+  .indicator {
+    top: 65%;
+  }
+}
+
 /* Media queries for smaller screens */
 @media (max-width: 768px) {
   .component-container {
@@ -141,8 +214,41 @@ export default {
   .body {
     font-size: 1.2em;
   }
+  .indicator {
+    transform: translate(
+      -50%,
+      calc(0.5em + 2vh)
+    ); /* Adjust for smaller screens */
+  }
+  .indicator {
+    top: 62%;
+  }
 }
-
+@media (max-width: 655px) {
+  .indicator {
+    top: 62%;
+  }
+}
+@media (max-width: 634px) {
+  .indicator {
+    top: 64%;
+  }
+}
+@media (max-width: 630px) {
+  .indicator {
+    top: 67%;
+  }
+}
+@media (max-width: 615px) {
+  .indicator {
+    top: 67%;
+  }
+}
+@media (max-width: 550px) {
+  .indicator {
+    top: 62%;
+  }
+}
 @media (max-width: 480px) {
   .tealsea-text,
   .tealsea-text {
@@ -151,6 +257,14 @@ export default {
 
   .body {
     font-size: 1em;
+  }
+  .indicator {
+    top: 66%;
+  }
+}
+@media (max-width: 462px) {
+  .indicator {
+    top: 62%;
   }
 }
 </style>

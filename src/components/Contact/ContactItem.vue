@@ -65,7 +65,7 @@
                 value="submit"
                 class="buttonform"
               >
-                Send
+                Enviar
               </button>
             </div>
           </form>
@@ -83,17 +83,22 @@
             </div>
             <ul class="social-media-list">
               <li>
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/theplusagc/" target="_blank">
                   <i class="fab fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="#" target="_blank">
-                  <i class="fab fa-whatsapp" aria-hidden="true"></i
+                <a
+                  href="https://www.linkedin.com/company/the-plus-agc/"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin"></i
                 ></a>
               </li>
               <li>
-                <a href="#" target="_blank"> <i class="fab fa-linkedin"></i></a>
+                <a href="" target="_blank">
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i
+                ></a>
               </li>
             </ul>
           </div>

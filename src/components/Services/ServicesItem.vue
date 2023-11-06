@@ -33,8 +33,6 @@
         <div class="modal-content" @click.stop>
           <span class="close" @click="closeModal">&times;</span>
           <img :src="currentImage?.url" alt="" />
-          <h2>{{ currentImage?.title }}</h2>
-          <p>{{ currentImage?.details }}</p>
         </div>
       </div>
     </transition>
@@ -57,31 +55,31 @@ interface Image {
 }
 const images: Image[] = [
   {
-    url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "src/assets/services_assets/service_1.jpg",
     title: "Plan Inicial",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    details: "Additional information about Canyons...",
+    description: "Conoce mas sobre este plan...",
+    details: "",
     expanded: false,
   },
   {
-    url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "src/assets/services_assets/service_2.jpg",
     title: "Plan Intermedio",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    details: "Additional information about Canyons...",
+    description: "Conoce mas sobre este plan...",
+    details: "",
     expanded: false,
   },
   {
-    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1171&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "src/assets/services_assets/service_3.jpg",
     title: "Plan Avanzado",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    details: "Additional information about Canyons...",
+    description: "Conoce mas sobre este plan...",
+    details: "",
     expanded: false,
   },
   {
-    url: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&q=80&w=1170&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "src/assets/services_assets/service_4.jpg",
     title: "Plan Personalizado",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    details: "Additional information about Canyons...",
+    description: "Conoce mas sobre este plan...",
+    details: "",
     expanded: false,
   },
 ];
@@ -165,7 +163,7 @@ onMounted(() => {
 .title-item {
   margin-bottom: 50px;
   color: white;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 /* Card Container Styles */
@@ -189,7 +187,7 @@ onMounted(() => {
   flex: 0 0 240px;
   width: 420px;
   height: 320px;
-  background-color: #333;
+  /* background-color: #93ffe82d; */
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
@@ -203,9 +201,10 @@ onMounted(() => {
 .card.expanded .card-details {
   display: block;
 }
+
 /* Background Styles */
 .card-bg {
-  opacity: 0.5;
+  /* opacity: 1; */
   position: absolute;
   top: 0;
   left: 0;
@@ -221,17 +220,22 @@ onMounted(() => {
 
 /* Card Info Styles */
 .card-info {
-  padding: 20px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 5px;
   position: absolute;
   bottom: 0;
-  color: #fff;
+  color: #ffffff;
   transform: translateY(40%);
   transition: 0.6s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  background-color: #005f4b63;
+  border-radius: 10px;
+  width: 420px;
 }
 
 .card-info p {
   opacity: 0;
-  text-shadow: black 0 2px 3px;
+  text-shadow: rgba(0, 0, 0, 0.555) 0 5px 5px;
   transition: 0.6s 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -261,7 +265,6 @@ onMounted(() => {
 
 .card-details {
   display: none;
-  /* ...other styles for your details section */
 }
 
 .card.expanded {
@@ -298,14 +301,14 @@ onMounted(() => {
 }
 
 .card-wrap:hover .card-bg {
-  opacity: 0.8;
+  opacity: 0.9;
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
     opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card-wrap:hover .card {
   box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px,
-    rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px,
+    rgba(0, 0, 0, 0.308) 0 30px 60px 0, inset #333 0 0 0 5px,
     inset white 0 0 0 6px;
   transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1),
     box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
@@ -331,7 +334,7 @@ onMounted(() => {
   background-color: #000000;
   padding: 20px;
   border-radius: 10px;
-  max-width: 65vw; /* or whatever maximum width you desire */
+  max-width: 45vw; /* or whatever maximum width you desire */
   max-height: auto; /* or whatever maximum height you desire */
   margin: auto; /* center the content */
   color: #fff;
@@ -364,12 +367,12 @@ onMounted(() => {
 }
 @media (max-width: 1500px) {
   .modal-content {
-    max-width: 85vw;
+    max-width: 60vw;
   }
 }
-@media (max-width: 1450px) {
+@media (max-width: 1150px) {
   .modal-content {
-    max-width: 80vw;
+    max-width: 75vw;
   }
 }
 
@@ -398,10 +401,15 @@ onMounted(() => {
     height: 240px;
   }
 }
+@media (max-width: 600px) {
+  .title-item {
+    margin-left: 150px;
+  }
+}
 
 @media (max-width: 450px) {
   .title-item {
-    margin-left: 100px;
+    margin-left: 85px;
   }
   .component-container {
     height: 150vh;
@@ -409,6 +417,11 @@ onMounted(() => {
   .card {
     width: 300px;
     height: 240px;
+  }
+}
+@media (max-width: 430px) {
+  .title-item {
+    margin-left: 70px;
   }
 }
 

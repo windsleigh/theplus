@@ -1,9 +1,13 @@
 <template>
   <div class="component-container">
     <div class="text-titles">
-      <h4>INTRODUCIENDO</h4>
-      <h1 class="title-item">UNA ACTUALIZACIÓN <u>MASIVA</u></h1>
-      <h4><u>El plus</u> que tu empresa necesita</h4>
+      <div class="title-item">
+        ¿Quieres <span class="pen-underline-1">dominar</span> el área digital?
+      </div>
+      <div class="subtitle-item">
+        Somos <span class="pen-underline-2">The Plus</span> que tu empresa
+        necesita
+      </div>
     </div>
     <ul class="timeline">
       <li class="timeline-item">
@@ -19,11 +23,11 @@
               src="src/assets/timeline_assets/icon_2.png"
               alt="Icon 1"
               class="title-icon"
-            />Contactanos
+            />Agenda una Reunión
           </h3>
           <p class="text-body">
-            Póngase en contacto con nosotros para obtener más información sobre
-            nuestros servicios.
+            Contáctanos para agendar una reunión para generar el mejor plan en
+            base a tus necesidades
           </p>
         </div>
       </li>
@@ -40,10 +44,11 @@
               src="src/assets/timeline_assets/icon_1.png"
               alt="Icon 2"
               class="title-icon"
-            />Agenda una Reunión
+            />Recibe un Plan Personalizado
           </h3>
           <p class="text-body">
-            Planifique una reunión para discutir sus necesidades y objetivos.
+            Recibirás un plan personalizado diseñado específicamente para
+            alcanzar los objetivos de tu empresa
           </p>
         </div>
       </li>
@@ -60,11 +65,10 @@
               src="src/assets/timeline_assets/icon_3.png"
               alt="Icon 3"
               class="title-icon"
-            />Recibe un Plan Personalizado
+            />Trabajar con Nosotros
           </h3>
           <p class="text-body">
-            Reciba un plan personalizado diseñado específicamente para alcanzar
-            sus metas.
+            Cuéntanos sobre tu negocio para asi comernos a tu competencia
           </p>
         </div>
       </li>
@@ -85,8 +89,7 @@
             Aumenta tus Ingresos
           </h3>
           <p class="text-body">
-            Comienza a aumentar sus ingresos con nuestros servicios
-            especializados.
+            Veras reflejado nuestro trabajo en la facturación de tu empresa
           </p>
         </div>
       </li>
@@ -166,7 +169,6 @@ export default defineComponent({
 
 .text-titles {
   margin-bottom: 150px;
-  font-size: 3rem;
   align-items: center;
   text-align: center;
 }
@@ -175,7 +177,11 @@ export default defineComponent({
   font-family: "Anton", sans-serif;
   margin-bottom: 20px;
   color: white;
-  font-size: 6vw;
+  font-size: 6rem;
+}
+.subtitle-item {
+  color: white;
+  font-size: 3rem;
 }
 
 .timeline {
@@ -237,7 +243,7 @@ export default defineComponent({
 .timeline-image {
   position: absolute;
   left: 150px; /* Adjust this value to position the images to the left of the indicators */
-  width: 600px; /* Adjust this value to control the width of the images */
+  width: 500px; /* Adjust this value to control the width of the images */
   height: auto; /* This will maintain the aspect ratio of the images */
   transform: translateY(
     0%
@@ -250,25 +256,65 @@ export default defineComponent({
   height: auto; /* This will maintain the aspect ratio of the icons */
 }
 
+@keyframes breathing-border {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+@keyframes breathing-gradient {
+  0%,
+  100% {
+    background-image: linear-gradient(
+      to right,
+      #007a7a,
+      #00927f,
+      #006f85
+    ); /* Normal state gradient */
+  }
+  50% {
+    background-image: linear-gradient(to right, #007a7a, #007a7a, #007a7a);
+  }
+}
+@keyframes shifting-gradient {
+  0%,
+  100% {
+    background-size: 200% 100%;
+    background-position: right bottom;
+  }
+  50% {
+    background-size: 200% 100%;
+    background-position: left bottom;
+  }
+}
+
 .agenda-button {
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   bottom: 70px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
   font-size: 1.8rem;
   color: white;
-  background-color: #6ebaba;
-  border: none;
-  border-radius: 5px;
+  background-image: linear-gradient(to right, #007a7a, #00927f, #006f85);
+  background-size: 200% 100%;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
   display: inline-block;
   text-decoration: none;
+  width: 450px;
+  border: 2px solid transparent;
+  animation: breathing-border 3s infinite,
+    shifting-gradient 3s infinite ease-in-out;
 }
 
 .agenda-button:hover {
-  background-color: #4c8389;
+  background: linear-gradient(to right, #00ac64, #006d5e, #00ac64);
 }
 
 .title {
@@ -276,6 +322,37 @@ export default defineComponent({
   margin-bottom: 1.6rem;
   color: #6ebaba;
 }
+.pen-underline-1 {
+  position: relative;
+  /* cursor: pointer; */
+  color: #51ffff; /* Or any other color you prefer for the text */
+  text-decoration: none;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 5px 2px;
+}
+
+.pen-underline-1::after {
+  content: "";
+  position: absolute;
+  bottom: -115px; /* Adjust the distance of the underline from the text */
+  left: 0;
+  right: 0;
+  height: 230px; /* Thickness of the pen underline */
+  background-image: url("src/assets/underline-2.svg");
+  background-repeat: repeat-x;
+  background-size: 100% 100%;
+}
+.pen-underline-2 {
+  position: relative;
+  /* cursor: pointer; */
+  color: #51ffff; /* Or any other color you prefer for the text */
+  text-decoration: none;
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 5px 2px;
+}
+
 @media (max-width: 1550px) {
   .component-container {
     /* Increase viewport height */
@@ -285,7 +362,7 @@ export default defineComponent({
     font-size: 2rem;
   }
   .title-item {
-    font-size: 5vw;
+    font-size: 6rem;
   }
   .timeline-image {
     /* Hide the images */
@@ -303,24 +380,24 @@ export default defineComponent({
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .component-container {
     /* Increase viewport height */
-    height: 270vh;
+    height: 280vh;
   }
 
   .text-titles {
     font-size: 2rem;
   }
   .title-item {
-    font-size: 5vw;
+    font-size: 5rem;
   }
 }
 
 @media (max-width: 1097px) {
   .component-container {
     /* Increase viewport height */
-    height: 270vh;
+    height: 280vh;
   }
   .timeline-image {
     /* Hide the images */
@@ -335,6 +412,12 @@ export default defineComponent({
   }
   .text-content {
     margin-left: 450px;
+  }
+  .title-item {
+    font-size: 4rem;
+  }
+  .subtitle-item {
+    font-size: 2.5rem;
   }
 }
 
@@ -367,18 +450,18 @@ export default defineComponent({
     /* Increase text size for better readability */
     font-size: 1.2em;
   }
-  .text-titles {
-    font-size: 1.8rem;
-  }
   .title-item {
-    font-size: 8vw;
+    font-size: 3.5rem;
+  }
+  .subtitle-item {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 600px) {
   .component-container {
     /* Increase viewport height */
-    height: 180vh;
+    height: 190vh;
   }
   .timeline-image {
     /* Hide the images */
@@ -403,6 +486,9 @@ export default defineComponent({
   .text-body {
     /* Increase text size for better readability */
     font-size: 1.2em;
+  }
+  .agenda-button {
+    width: 400px;
   }
 }
 @media (max-width: 450px) {
@@ -436,6 +522,7 @@ export default defineComponent({
     font-size: 1.2em;
   }
 }
+
 @media (max-width: 390px) {
   .component-container {
     /* Increase viewport height */

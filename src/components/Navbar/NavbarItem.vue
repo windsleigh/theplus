@@ -7,9 +7,9 @@
     </div>
     <div class="nav-links desktop-nav">
       <router-link to="/#home">Home</router-link>
-      <router-link to="/#about">About</router-link>
-      <router-link to="/#services">Services</router-link>
-      <router-link to="/#contact">Contact</router-link>
+      <router-link to="/#about">Nosotros</router-link>
+      <router-link to="/#services">Servicios</router-link>
+      <router-link to="/#contact">Contacto</router-link>
     </div>
     <button
       class="hamburger mobile-nav"
@@ -30,11 +30,13 @@
       </button>
       <div class="sidebar-links">
         <router-link to="/#home" @click="toggleSidebar">Home</router-link>
-        <router-link to="/#about" @click="toggleSidebar">About</router-link>
+        <router-link to="/#about" @click="toggleSidebar">Nosotros</router-link>
         <router-link to="/#services" @click="toggleSidebar"
-          >Services</router-link
+          >Servicios</router-link
         >
-        <router-link to="/#contact" @click="toggleSidebar">Contact</router-link>
+        <router-link to="/#contact" @click="toggleSidebar"
+          >Contacto</router-link
+        >
       </div>
     </div>
   </div>
@@ -149,6 +151,7 @@ const sidebarClass = computed(() => (isSidebarOpen.value ? "open" : "closed"));
   border: none;
   background: none;
   cursor: pointer;
+  padding-right: 10px;
 }
 
 .bar {
