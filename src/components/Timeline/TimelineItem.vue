@@ -3,7 +3,7 @@
     <div class="text-titles">
       <h4>INTRODUCIENDO</h4>
       <h1 class="title-item">UNA ACTUALIZACIÓN <u>MASIVA</u></h1>
-      <h3><u>El plus</u> que tu empresa necesita</h3>
+      <h4><u>El plus</u> que tu empresa necesita</h4>
     </div>
     <ul class="timeline">
       <li class="timeline-item">
@@ -140,19 +140,6 @@ export default defineComponent({
             toggleActions: "play none none reverse",
           },
         });
-
-        // New animation for text-body
-        gsap.from(element.querySelector(".text-body") as HTMLElement, {
-          autoAlpha: 0,
-          y: animationParams.y,
-          duration: 0.5,
-          scrollTrigger: {
-            trigger: element,
-            start: animationParams.start,
-            end: animationParams.end,
-            toggleActions: "play none none reverse",
-          },
-        });
       });
     });
   },
@@ -162,7 +149,7 @@ export default defineComponent({
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500&display=swap");
 .component-container {
-  height: 230vh;
+  height: 250vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -188,7 +175,7 @@ export default defineComponent({
   font-family: "Anton", sans-serif;
   margin-bottom: 20px;
   color: white;
-  font-size: 6rem;
+  font-size: 6vw;
 }
 
 .timeline {
@@ -289,18 +276,51 @@ export default defineComponent({
   margin-bottom: 1.6rem;
   color: #6ebaba;
 }
+@media (max-width: 1550px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 250vh;
+  }
+  .text-titles {
+    font-size: 2rem;
+  }
+  .title-item {
+    font-size: 5vw;
+  }
+  .timeline-image {
+    /* Hide the images */
+    width: 400px;
+    left: 40px;
+  }
+  .timeline-indicator {
+    left: 550px;
+  }
+  .timeline::before {
+    left: 550px;
+  }
+  .text-content {
+    margin-left: 600px;
+  }
+}
 
 @media (max-width: 1200px) {
   .component-container {
     /* Increase viewport height */
-    height: 220vh;
+    height: 270vh;
+  }
+
+  .text-titles {
+    font-size: 2rem;
+  }
+  .title-item {
+    font-size: 5vw;
   }
 }
 
-@media (max-width: 937px) {
+@media (max-width: 1097px) {
   .component-container {
     /* Increase viewport height */
-    height: 250vh;
+    height: 270vh;
   }
   .timeline-image {
     /* Hide the images */
@@ -321,7 +341,44 @@ export default defineComponent({
 @media (max-width: 880px) {
   .component-container {
     /* Increase viewport height */
-    height: 150vh;
+    height: 170vh;
+  }
+  .timeline-image {
+    /* Hide the images */
+    display: none;
+  }
+  .timeline::before,
+  .timeline-indicator {
+    /* Adjust the position of the timeline line and indicators */
+    left: 50px;
+  }
+  .timeline-item {
+    /* Adjust spacing between items */
+    margin-bottom: 100px;
+  }
+  .text-content {
+    /* Adjust margin for text content */
+    font-size: large;
+    margin-left: 100px;
+    width: 70%;
+  }
+  .title,
+  .text-body {
+    /* Increase text size for better readability */
+    font-size: 1.2em;
+  }
+  .text-titles {
+    font-size: 1.8rem;
+  }
+  .title-item {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 180vh;
   }
   .timeline-image {
     /* Hide the images */
@@ -348,8 +405,12 @@ export default defineComponent({
     font-size: 1.2em;
   }
 }
-
-@media (max-width: 600px) {
+@media (max-width: 450px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 210vh;
+    overflow: hidden;
+  }
   .timeline-image {
     /* Hide the images */
     display: none;
@@ -373,6 +434,26 @@ export default defineComponent({
   .text-body {
     /* Increase text size for better readability */
     font-size: 1.2em;
+  }
+}
+@media (max-width: 390px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 220vh;
+    overflow: hidden;
+  }
+  .text-titles {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 375px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 280vh;
+    overflow: hidden;
+  }
+  .text-titles {
+    margin-bottom: 60px;
   }
 }
 </style>

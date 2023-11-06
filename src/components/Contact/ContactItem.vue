@@ -165,7 +165,8 @@ export default {
 
 <style scoped>
 .component-container {
-  height: 70vh;
+  overflow: hidden;
+  height: 80vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -361,7 +362,7 @@ export default {
 /* This will apply styles for screens smaller than 480px (typical phone size) */
 @media (max-width: 582px) {
   .component-container {
-    height: 100vh;
+    height: 105vh;
   }
   .content-wrapper {
     flex-direction: column; /* Stack items on top of each other */
@@ -383,6 +384,30 @@ export default {
   }
   .social {
     margin-left: 50px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 385px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 110vh;
+    overflow: hidden;
+  }
+  .social {
+    padding-top: 10px;
+    margin-left: 40px;
+  }
+}
+@media (max-width: 375px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 140vh;
+    overflow: hidden;
+  }
+  .social {
+    margin-left: 40px;
   }
 }
 </style>

@@ -159,6 +159,7 @@ onMounted(() => {
   justify-content: center;
   position: relative;
   z-index: 10;
+  overflow: hidden;
 }
 
 .title-item {
@@ -348,6 +349,8 @@ onMounted(() => {
   top: 10px;
   right: 10px;
   cursor: pointer;
+  font-size: 3rem; /* Adjust this value to make the 'x' larger */
+  color: #ffffff; /* Set color to white */
 }
 /* Define the transition styles */
 .fade-enter-active,
@@ -359,11 +362,26 @@ onMounted(() => {
 .fade-leave-to {
   opacity: 0;
 }
+@media (max-width: 1500px) {
+  .modal-content {
+    max-width: 85vw;
+  }
+}
+@media (max-width: 1450px) {
+  .modal-content {
+    max-width: 80vw;
+  }
+}
 
+@media (max-width: 937px) {
+  .modal-content {
+    max-width: 93vw;
+  }
+}
 /* Responsive Styles */
 @media (max-width: 875px) {
   .component-container {
-    height: 80vh;
+    height: 150vh;
   }
   .card {
     width: 300px;
@@ -378,6 +396,27 @@ onMounted(() => {
   .card {
     width: 300px;
     height: 240px;
+  }
+}
+
+@media (max-width: 450px) {
+  .title-item {
+    margin-left: 100px;
+  }
+  .component-container {
+    height: 150vh;
+  }
+  .card {
+    width: 300px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 375px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 210vh;
+    overflow: hidden;
   }
 }
 </style>

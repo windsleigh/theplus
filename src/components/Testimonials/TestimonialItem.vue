@@ -172,6 +172,7 @@ export default {
   backdrop-filter: blur(10px);
   background: linear-gradient(to right, #1c5e5e, #1e3d41, #0f2226);
   backdrop-filter: blur(100px);
+  overflow: hidden;
 }
 .services-title {
   margin-bottom: 2rem;

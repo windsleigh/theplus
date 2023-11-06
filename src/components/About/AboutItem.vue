@@ -56,9 +56,9 @@ export default {
   align-items: center;
   color: white;
   font-size: 1.5rem;
-
   z-index: 2;
   position: relative;
+  overflow: hidden;
 }
 
 .tealsea-container {

@@ -47,7 +47,7 @@ onMounted(() => {
 
   // Blob 1 moving from left to right
   gsap.to("#blob1", {
-    left: "80%", // Move to the right end
+    left: "50%", // Move to the right end
     duration: 2,
     repeat: -1,
     yoyo: true,
@@ -55,7 +55,7 @@ onMounted(() => {
 
   // Blob 2 moving from right to left
   gsap.to("#blob2", {
-    left: "0%", // Move to the left end
+    left: "10%", // Move to the left end
     duration: 2,
     repeat: -1,
     yoyo: true,
@@ -85,6 +85,7 @@ onMounted(() => {
   position: relative;
   background-color: #00181d;
   z-index: 1;
+  overflow: hidden;
 }
 
 .blob {
@@ -97,6 +98,12 @@ onMounted(() => {
   animation: rotate 2s infinite;
   opacity: 0.9;
   z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #blob1 {
@@ -134,6 +141,12 @@ onMounted(() => {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 450px) {
+  .blob {
+    height: 15vmax; /* Adjust this value to achieve the desired size */
   }
 }
 </style>
