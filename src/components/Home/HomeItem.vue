@@ -47,16 +47,16 @@ onMounted(() => {
 
   // Blob 1 moving from left to right
   gsap.to("#blob1", {
-    left: "50%", // Move to the right end
-    duration: 2,
+    left: "70%", // Move to the right end
+    duration: 3,
     repeat: -1,
     yoyo: true,
   });
 
   // Blob 2 moving from right to left
   gsap.to("#blob2", {
-    left: "10%", // Move to the left end
-    duration: 2,
+    left: "-10%", // Move to the left end
+    duration: 3,
     repeat: -1,
     yoyo: true,
   });
@@ -90,7 +90,7 @@ onMounted(() => {
 
 .blob {
   background-color: white;
-  height: 30vmax; /* Smaller size */
+  height: 35vmax; /* Smaller size */
   aspect-ratio: 1;
   position: absolute;
   border-radius: 50%;
@@ -107,7 +107,7 @@ onMounted(() => {
 }
 
 #blob1 {
-  left: 50%;
+  left: 60%;
   top: 35%;
   transform: translate(-50%, -50%);
 }

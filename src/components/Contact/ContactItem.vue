@@ -394,6 +394,17 @@ export default {
     font-size: 2rem;
   }
 }
+@media (max-width: 390px) {
+  .component-container {
+    /* Increase viewport height */
+    height: 110vh;
+    overflow: hidden;
+  }
+  .social {
+    padding-top: 10px;
+    margin-left: 40px;
+  }
+}
 @media (max-width: 385px) {
   .component-container {
     /* Increase viewport height */

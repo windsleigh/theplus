@@ -5,15 +5,15 @@
         <h1 class="tealsea-text">Somos una empresa de marketing digital</h1>
         <div class="body">
           <div class="p1">
-            Olvidate del área digital de tu empresa y dejala en nuestras manos.
-            Nosotros potenciamos tu negocios para que alcances a una mayor
+            Olvídate del área digital de tu empresa y déjala en nuestras manos.
+            Nosotros potenciamos tú negocios para que alcances a una mayor
             cantidad de clientes.
           </div>
           <div class="p2">
             Gestionamos, Desarrollamos y Creamos una estrategia digital que
             permite aumentar los ingresos de tu negocio/marca
           </div>
-          <div class="indicator"></div>
+
           <div class="p3">
             Elaboramos piezas gráficas para mantener activas tus cuentas y saber
             que es lo que tus clientes prefieren
@@ -184,8 +184,11 @@ export default {
   }
 }
 @media (max-width: 840px) {
-  .indicator {
-    top: 65%;
+  .component-container {
+    height: 100vh;
+  }
+  .tealsea-container {
+    height: 100vh;
   }
 }
 
@@ -224,29 +227,13 @@ export default {
     top: 62%;
   }
 }
-@media (max-width: 655px) {
-  .indicator {
-    top: 62%;
-  }
-}
-@media (max-width: 634px) {
-  .indicator {
-    top: 64%;
-  }
-}
-@media (max-width: 630px) {
-  .indicator {
-    top: 67%;
-  }
-}
-@media (max-width: 615px) {
-  .indicator {
-    top: 67%;
-  }
-}
+
 @media (max-width: 550px) {
-  .indicator {
-    top: 62%;
+  .component-container {
+    height: 150vh;
+  }
+  .tealsea-container {
+    height: 150vh;
   }
 }
 @media (max-width: 480px) {
@@ -257,14 +244,6 @@ export default {
 
   .body {
     font-size: 1em;
-  }
-  .indicator {
-    top: 66%;
-  }
-}
-@media (max-width: 462px) {
-  .indicator {
-    top: 62%;
   }
 }
 </style>

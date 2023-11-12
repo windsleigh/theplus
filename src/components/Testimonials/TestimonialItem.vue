@@ -19,9 +19,16 @@
           class="testimonial-item"
           v-show="currentTestimonialIndex === index"
         >
-          <h2 class="testimonial-title">{{ testimonial.title }}</h2>
-          <p class="testimonial-quote">{{ testimonial.quote }}</p>
-          <p class="testimonial-author">{{ testimonial.author }}</p>
+          <img
+            :src="testimonial.logo"
+            alt="Company Logo"
+            class="company-logo"
+          />
+          <div class="testimonial-text-container">
+            <h2 class="testimonial-title">{{ testimonial.title }}</h2>
+            <p class="testimonial-quote">{{ testimonial.quote }}</p>
+            <p class="testimonial-author">{{ testimonial.author }}</p>
+          </div>
         </div>
       </div>
       <button
@@ -45,6 +52,7 @@ interface Testimonial {
   title: string;
   quote: string;
   author: string;
+  logo: string;
 }
 
 export default {
@@ -54,21 +62,35 @@ export default {
     const testimonials = ref<Testimonial[]>([
       {
         id: 1,
-        title: "Testimonial 1",
-        quote: "This is a fantastic product!",
-        author: "Author 1",
+        logo: "src/assets/testimonial_logo/logo_1.png",
+        title: "Bazar Meghna",
+        quote:
+          "Nos ayudaron a impulsar las ventas en todo lo que no se movía en el negocio. Siempre con buena disposición a ayudar en más de lo que se contrató exactamente",
+        author: "Pierina Assen",
       },
       {
         id: 2,
-        title: "Testimonial 2",
-        quote: "This is a fantastic product!",
-        author: "Author 1",
+        logo: "src/assets/testimonial_logo/logo_2.png",
+        title: "Santina",
+        quote:
+          "Cumplieron con plazos, y un excelente desempeño en el lanzamiento del e-commerce. La relación muy amigable y profesional, escuchaban todo lo que quería transmitir en mi negocio",
+        author: "Favia Pallavicini",
       },
       {
         id: 3,
-        title: "Testimonial 3",
-        quote: "This is a fantastic product!",
-        author: "Author 1",
+        logo: "src/assets/testimonial_logo/logo_3.png",
+        title: "Saint Venik",
+        quote:
+          "El equipo ha demostrado un aumento en mis ventas del 500% en tan sólo 3 meses. Profesionales, dedicados y expertos en el marketing digital. Mi negocio solo depende de esta área, en buenas manos ha crecido como nunca antes.",
+        author: "Benjamín Álvarez",
+      },
+      {
+        id: 4,
+        logo: "src/assets/testimonial_logo/logo_4.png",
+        title: "Perfumeria Jashan",
+        quote:
+          "Han ayudado en múltiples estructuras y flujos trabajo de la perfumería extras a lo contratado. Permitieron tener un nuevo orden y así en consiguiente una mejora en los resultados inmediatamente reflejado en las ventas.",
+        author: "Kishan Punjabi",
       },
     ]);
 
@@ -219,10 +241,34 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  /* text-align: center; */
+  width: 50%;
   padding: 0px;
 }
+.testimonial-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Adjust spacing between items */
+}
 
+.company-logo {
+  width: 150px; /* Adjust as needed */
+  margin-right: 20px; /* Adjust space between logo and text */
+  border-radius: 100px;
+}
+
+.testimonial-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text to the start of the container */
+}
+
+.testimonial-title,
+.testimonial-quote,
+.testimonial-author {
+  margin: 0; /* Remove default margins if needed */
+  text-align: left;
+}
 .testimonial-title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -236,5 +282,48 @@ button:focus {
 .testimonial-author {
   font-size: 0.875rem;
   color: rgba(204, 204, 204, 0.8); /* Optional: for a subtle author name */
+}
+
+@media (max-width: 1000px) {
+  .component-container {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 887px) {
+  .component-container {
+    height: 60vh;
+  }
+  .testimonial-item {
+    flex-direction: column;
+    align-items: center; /* Center align items for smaller screens */
+  }
+
+  .company-logo {
+    margin-right: 0;
+    margin-bottom: 10px; /* Add some space between logo and text */
+    width: 100px; /* Adjust the size of the logo for smaller screens */
+  }
+
+  .testimonial-text-container {
+    align-items: center; /* Center align text for smaller screens */
+  }
+
+  .testimonial-title,
+  .testimonial-quote,
+  .testimonial-author {
+    text-align: center; /* Center the text for smaller screens */
+  }
+}
+
+@media (max-width: 605px) {
+  .component-container {
+    height: 50vh;
+  }
+}
+@media (max-width: 405px) {
+  .component-container {
+    height: 60vh;
+  }
 }
 </style>

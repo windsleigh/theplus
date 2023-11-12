@@ -424,12 +424,23 @@ onMounted(() => {
     margin-left: 70px;
   }
 }
-
-@media (max-width: 375px) {
+@media (max-width: 390px) {
+  .component-container {
+    height: 200vh;
+    overflow: hidden;
+  }
+  .title-item {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 360px) {
   .component-container {
     /* Increase viewport height */
-    height: 210vh;
+    height: 180vh;
     overflow: hidden;
+  }
+  .title-item {
+    margin-left: 40px;
   }
 }
 </style>

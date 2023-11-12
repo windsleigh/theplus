@@ -26,8 +26,8 @@
             />Agenda una Reunión
           </h3>
           <p class="text-body">
-            Contáctanos para agendar una reunión para generar el mejor plan en
-            base a tus necesidades
+            Contáctanos para agendar una reunión, para generar el mejor plan
+            basándonos en tus necesidades.
           </p>
         </div>
       </li>
@@ -48,7 +48,7 @@
           </h3>
           <p class="text-body">
             Recibirás un plan personalizado diseñado específicamente para
-            alcanzar los objetivos de tu empresa
+            alcanzar los objetivos de tu empresa.
           </p>
         </div>
       </li>
@@ -65,10 +65,10 @@
               src="src/assets/timeline_assets/icon_3.png"
               alt="Icon 3"
               class="title-icon"
-            />Trabajar con Nosotros
+            />Trabaja con Nosotros
           </h3>
           <p class="text-body">
-            Cuéntanos sobre tu negocio para asi comernos a tu competencia
+            Cuéntanos sobre tu negocio para así comernos a tu competencia.
           </p>
         </div>
       </li>
@@ -89,7 +89,7 @@
             Aumenta tus Ingresos
           </h3>
           <p class="text-body">
-            Veras reflejado nuestro trabajo en la facturación de tu empresa
+            Verás reflejado nuestro trabajo en la facturación de tu empresa.
           </p>
         </div>
       </li>
@@ -152,7 +152,7 @@ export default defineComponent({
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500&display=swap");
 .component-container {
-  height: 250vh;
+  height: 235vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -182,6 +182,7 @@ export default defineComponent({
 .subtitle-item {
   color: white;
   font-size: 3rem;
+  padding-bottom: 15px;
 }
 
 .timeline {
@@ -196,7 +197,7 @@ export default defineComponent({
   position: absolute;
   top: 0;
   bottom: 100px;
-  left: 900px; /* Adjust this value to position the line relative to the indicators */
+  left: 950px; /* Adjust this value to position the line relative to the indicators */
   width: 2px;
   background-color: #ffffff;
 }
@@ -214,12 +215,12 @@ export default defineComponent({
   background-color: #6ebaba;
   border-radius: 50%;
   position: absolute;
-  left: 900px; /* This positions the indicator at the start of the timeline-item */
+  left: 950px; /* This positions the indicator at the start of the timeline-item */
   transform: translateX(-50%); /* This centers the indicator on the line */
 }
 
 .text-content {
-  margin-left: 950px;
+  margin-left: 1000px;
   padding: 20px;
   width: 50%;
   /* Add any additional styles for the text content here */
@@ -242,7 +243,7 @@ export default defineComponent({
 
 .timeline-image {
   position: absolute;
-  left: 150px; /* Adjust this value to position the images to the left of the indicators */
+  left: 200px; /* Adjust this value to position the images to the left of the indicators */
   width: 500px; /* Adjust this value to control the width of the images */
   height: auto; /* This will maintain the aspect ratio of the images */
   transform: translateY(
@@ -314,7 +315,7 @@ export default defineComponent({
 }
 
 .agenda-button:hover {
-  background: linear-gradient(to right, #00ac64, #006d5e, #00ac64);
+  background: linear-gradient(to right, #10e7d5, #006d5e, #10e7d5);
 }
 
 .title {
@@ -523,20 +524,23 @@ export default defineComponent({
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 500px) {
   .component-container {
     /* Increase viewport height */
-    height: 220vh;
+    height: 235vh;
     overflow: hidden;
   }
   .text-titles {
     margin-bottom: 60px;
   }
+  .agenda-button {
+    width: 300px;
+  }
 }
 @media (max-width: 375px) {
   .component-container {
     /* Increase viewport height */
-    height: 280vh;
+    height: 310vh;
     overflow: hidden;
   }
   .text-titles {
