@@ -28,7 +28,7 @@
               </a>
               <a href="">
                 <i class="fab fa-whatsapp icon"></i>
-                +56 9 1234 5678
+                +56 9 5962 8065
               </a>
             </div>
           </div>

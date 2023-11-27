@@ -8,7 +8,7 @@
         <!-- Contact Us Section -->
         <div class="section contact-us">
           <form
-            action="https://formspree.io/f/xleyzkyk"
+            action="https://formspree.io/f/xrgwwgqj"
             method="POST"
             id="form_val"
             autocomplete="off"
@@ -96,7 +96,7 @@
                 ></a>
               </li>
               <li>
-                <a href="" target="_blank">
+                <a href="https://wa.me/+56959628065/?text=Contacta a ThePlusAGC">
                   <i class="fab fa-whatsapp" aria-hidden="true"></i
                 ></a>
               </li>
