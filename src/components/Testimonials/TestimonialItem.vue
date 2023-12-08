@@ -44,8 +44,8 @@
   </div>
 </template>
 <script lang="ts">
-import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import { gsap } from "gsap";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 
 interface Testimonial {
   id: number;
@@ -62,7 +62,7 @@ export default {
     const testimonials = ref<Testimonial[]>([
       {
         id: 1,
-        logo: "src/assets/testimonial_logo/logo_1.png",
+        logo: "testimonial_logo/logo_1.png",
         title: "Bazar Meghna",
         quote:
           "Nos ayudaron a impulsar las ventas en todo lo que no se movía en el negocio. Siempre con buena disposición a ayudar en más de lo que se contrató exactamente",
@@ -70,7 +70,7 @@ export default {
       },
       {
         id: 2,
-        logo: "src/assets/testimonial_logo/logo_2.png",
+        logo: "testimonial_logo/logo_2.png",
         title: "Santina",
         quote:
           "Cumplieron con plazos, y un excelente desempeño en el lanzamiento del e-commerce. La relación muy amigable y profesional, escuchaban todo lo que quería transmitir en mi negocio",
@@ -78,7 +78,7 @@ export default {
       },
       {
         id: 3,
-        logo: "src/assets/testimonial_logo/logo_3.png",
+        logo: "testimonial_logo/logo_3.png",
         title: "Saint Venik",
         quote:
           "El equipo ha demostrado un aumento en mis ventas del 500% en tan sólo 3 meses. Profesionales, dedicados y expertos en el marketing digital. Mi negocio solo depende de esta área, en buenas manos ha crecido como nunca antes.",
@@ -86,7 +86,7 @@ export default {
       },
       {
         id: 4,
-        logo: "src/assets/testimonial_logo/logo_4.png",
+        logo: "testimonial_logo/logo_4.png",
         title: "Perfumeria Jashan",
         quote:
           "Han ayudado en múltiples estructuras y flujos trabajo de la perfumería extras a lo contratado. Permitieron tener un nuevo orden y así en consiguiente una mejora en los resultados inmediatamente reflejado en las ventas.",

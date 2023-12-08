@@ -12,7 +12,7 @@
     <ul class="timeline">
       <li class="timeline-item">
         <img
-          src="src/assets/timeline_assets/timeline_1.png"
+          src="timeline_assets/timeline_1.png"
           alt="Timeline Step 1"
           class="timeline-image"
         />
@@ -20,7 +20,7 @@
         <div class="text-content">
           <h3 class="title">
             <img
-              src="src/assets/timeline_assets/icon_2.png"
+              src="timeline_assets/icon_2.png"
               alt="Icon 1"
               class="title-icon"
             />Agenda una Reunión
@@ -33,7 +33,7 @@
       </li>
       <li class="timeline-item">
         <img
-          src="src/assets/timeline_assets/timeline_2.png"
+          src="timeline_assets/timeline_2.png"
           alt="Timeline Step 2"
           class="timeline-image"
         />
@@ -41,7 +41,7 @@
         <div class="text-content">
           <h3 class="title">
             <img
-              src="src/assets/timeline_assets/icon_1.png"
+              src="timeline_assets/icon_1.png"
               alt="Icon 2"
               class="title-icon"
             />Recibe un Plan Personalizado
@@ -54,7 +54,7 @@
       </li>
       <li class="timeline-item">
         <img
-          src="src/assets/timeline_assets/timeline_3.png"
+          src="timeline_assets/timeline_3.png"
           alt="Timeline Step 3"
           class="timeline-image"
         />
@@ -62,7 +62,7 @@
         <div class="text-content">
           <h3 class="title">
             <img
-              src="src/assets/timeline_assets/icon_3.png"
+              src="timeline_assets/icon_3.png"
               alt="Icon 3"
               class="title-icon"
             />Trabaja con Nosotros
@@ -74,7 +74,7 @@
       </li>
       <li class="timeline-item">
         <img
-          src="src/assets/timeline_assets/timeline_4.png"
+          src="timeline_assets/timeline_4.png"
           alt="Timeline Step 4"
           class="timeline-image"
         />
@@ -82,7 +82,7 @@
         <div class="text-content">
           <h3 class="title">
             <img
-              src="src/assets/timeline_assets/icon_4.png"
+              src="timeline_assets/icon_4.png"
               alt="Icon 4"
               class="title-icon"
             />
@@ -101,9 +101,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { defineComponent, onMounted } from "vue";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -40,9 +40,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { computed, onMounted, ref } from "vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,28 +55,28 @@ interface Image {
 }
 const images: Image[] = [
   {
-    url: "src/assets/services_assets/service_1.jpg",
+    url: "services_assets/service_1.jpg",
     title: "Plan Inicial",
     description: "Conoce mas sobre este plan...",
     details: "",
     expanded: false,
   },
   {
-    url: "src/assets/services_assets/service_2.jpg",
+    url: "services_assets/service_2.jpg",
     title: "Plan Intermedio",
     description: "Conoce mas sobre este plan...",
     details: "",
     expanded: false,
   },
   {
-    url: "src/assets/services_assets/service_3.jpg",
+    url: "services_assets/service_3.jpg",
     title: "Plan Avanzado",
     description: "Conoce mas sobre este plan...",
     details: "",
     expanded: false,
   },
   {
-    url: "src/assets/services_assets/service_4.jpg",
+    url: "services_assets/service_4.jpg",
     title: "Plan Personalizado",
     description: "Conoce mas sobre este plan...",
     details: "",
