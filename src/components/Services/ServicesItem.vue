@@ -443,4 +443,21 @@ onMounted(() => {
     margin-left: 40px;
   }
 }
+
+@media (max-height: 820px) {
+
+
+.component-container {
+  height: 120vh;
+
+}
+}
+
+@media (max-height: 660px) {
+
+.component-container {
+  height: 140vh;
+
+}
+}
 </style>

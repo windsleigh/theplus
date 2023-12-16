@@ -426,4 +426,11 @@ export default {
     margin-left: 40px;
   }
 }
+
+@media (max-height: 800px) {
+.component-container {
+  height: 110vh;
+
+}
+}
 </style>

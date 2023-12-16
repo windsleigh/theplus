@@ -326,4 +326,12 @@ button:focus {
     height: 60vh;
   }
 }
+@media (max-height: 800px) {
+
+
+.component-container {
+  height: 45vh;
+
+}
+}
 </style>

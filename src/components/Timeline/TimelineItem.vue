@@ -11,19 +11,11 @@
     </div>
     <ul class="timeline">
       <li class="timeline-item">
-        <img
-          src="timeline_assets/timeline_1.png"
-          alt="Timeline Step 1"
-          class="timeline-image"
-        />
+        <img src="timeline_assets/timeline_1.png" alt="Timeline Step 1" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img
-              src="timeline_assets/icon_2.png"
-              alt="Icon 1"
-              class="title-icon"
-            />Agenda una Reunión
+            <img src="timeline_assets/icon_2.png" alt="Icon 1" class="title-icon" />Agenda una Reunión
           </h3>
           <p class="text-body">
             Contáctanos para agendar una reunión, para generar el mejor plan
@@ -32,19 +24,11 @@
         </div>
       </li>
       <li class="timeline-item">
-        <img
-          src="timeline_assets/timeline_2.png"
-          alt="Timeline Step 2"
-          class="timeline-image"
-        />
+        <img src="timeline_assets/timeline_2.png" alt="Timeline Step 2" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img
-              src="timeline_assets/icon_1.png"
-              alt="Icon 2"
-              class="title-icon"
-            />Recibe un Plan Personalizado
+            <img src="timeline_assets/icon_1.png" alt="Icon 2" class="title-icon" />Recibe un Plan Personalizado
           </h3>
           <p class="text-body">
             Recibirás un plan personalizado diseñado específicamente para
@@ -53,19 +37,11 @@
         </div>
       </li>
       <li class="timeline-item">
-        <img
-          src="timeline_assets/timeline_3.png"
-          alt="Timeline Step 3"
-          class="timeline-image"
-        />
+        <img src="timeline_assets/timeline_3.png" alt="Timeline Step 3" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img
-              src="timeline_assets/icon_3.png"
-              alt="Icon 3"
-              class="title-icon"
-            />Trabaja con Nosotros
+            <img src="timeline_assets/icon_3.png" alt="Icon 3" class="title-icon" />Trabaja con Nosotros
           </h3>
           <p class="text-body">
             Cuéntanos sobre tu negocio para así comernos a tu competencia.
@@ -73,19 +49,11 @@
         </div>
       </li>
       <li class="timeline-item">
-        <img
-          src="timeline_assets/timeline_4.png"
-          alt="Timeline Step 4"
-          class="timeline-image"
-        />
+        <img src="timeline_assets/timeline_4.png" alt="Timeline Step 4" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img
-              src="timeline_assets/icon_4.png"
-              alt="Icon 4"
-              class="title-icon"
-            />
+            <img src="timeline_assets/icon_4.png" alt="Icon 4" class="title-icon" />
             Aumenta tus Ingresos
           </h3>
           <p class="text-body">
@@ -119,17 +87,17 @@ export default defineComponent({
         // Different animation parameters based on screen size
         const animationParams = smallScreenMatchMedia.matches
           ? {
-              x: 0,
-              y: 0,
-              start: "top 80%",
-              end: "bottom 30%",
-            }
+            x: 0,
+            y: 0,
+            start: "top 80%",
+            end: "bottom 30%",
+          }
           : {
-              x: 100, // changed from 100 to -100
-              y: 500,
-              start: "top 60%",
-              end: "bottom 20%",
-            };
+            x: 100, // changed from 100 to -100
+            y: 500,
+            start: "top 60%",
+            end: "bottom 20%",
+          };
 
         // Existing animation for text-content
         gsap.from(element.querySelector(".text-content") as HTMLElement, {
@@ -151,6 +119,7 @@ export default defineComponent({
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500&display=swap");
+
 .component-container {
   height: 235vh;
   width: 100vw;
@@ -161,10 +130,10 @@ export default defineComponent({
   color: white;
   font-size: 2rem;
   background: linear-gradient(to right, #1c5e5e, #1e3d41, #0f2226);
-  backdrop-filter: blur(
-    100px
-  ); /* Adjust this value to control the level of blur */
-  opacity: 1; /* Optional: This will make the background slightly transparent, which can enhance the blur effect */
+  backdrop-filter: blur(100px);
+  /* Adjust this value to control the level of blur */
+  opacity: 1;
+  /* Optional: This will make the background slightly transparent, which can enhance the blur effect */
 }
 
 .text-titles {
@@ -172,6 +141,7 @@ export default defineComponent({
   align-items: center;
   text-align: center;
 }
+
 .title-item {
   color: aquamarine;
   font-family: "Anton", sans-serif;
@@ -179,6 +149,7 @@ export default defineComponent({
   color: white;
   font-size: 6rem;
 }
+
 .subtitle-item {
   color: white;
   font-size: 3rem;
@@ -189,7 +160,8 @@ export default defineComponent({
   padding: 0;
   margin: 0;
   list-style-type: none;
-  position: relative; /* This makes sure the pseudo-element is positioned relative to this element */
+  position: relative;
+  /* This makes sure the pseudo-element is positioned relative to this element */
 }
 
 .timeline::before {
@@ -197,7 +169,8 @@ export default defineComponent({
   position: absolute;
   top: 0;
   bottom: 100px;
-  left: 950px; /* Adjust this value to position the line relative to the indicators */
+  left: 950px;
+  /* Adjust this value to position the line relative to the indicators */
   width: 2px;
   background-color: #ffffff;
 }
@@ -205,8 +178,10 @@ export default defineComponent({
 .timeline-item {
   display: flex;
   align-items: center;
-  margin-bottom: 250px; /* Adjust spacing between items */
-  position: relative; /* This makes sure the timeline-indicator is positioned relative to this item */
+  margin-bottom: 250px;
+  /* Adjust spacing between items */
+  position: relative;
+  /* This makes sure the timeline-indicator is positioned relative to this item */
 }
 
 .timeline-indicator {
@@ -215,8 +190,10 @@ export default defineComponent({
   background-color: #6ebaba;
   border-radius: 50%;
   position: absolute;
-  left: 950px; /* This positions the indicator at the start of the timeline-item */
-  transform: translateX(-50%); /* This centers the indicator on the line */
+  left: 950px;
+  /* This positions the indicator at the start of the timeline-item */
+  transform: translateX(-50%);
+  /* This centers the indicator on the line */
 }
 
 .text-content {
@@ -243,49 +220,62 @@ export default defineComponent({
 
 .timeline-image {
   position: absolute;
-  left: 200px; /* Adjust this value to position the images to the left of the indicators */
-  width: 500px; /* Adjust this value to control the width of the images */
-  height: auto; /* This will maintain the aspect ratio of the images */
-  transform: translateY(
-    0%
-  ); /* This will vertically center the images with the indicators */
+  left: 200px;
+  /* Adjust this value to position the images to the left of the indicators */
+  width: 500px;
+  /* Adjust this value to control the width of the images */
+  height: auto;
+  /* This will maintain the aspect ratio of the images */
+  transform: translateY(0%);
+  /* This will vertically center the images with the indicators */
 }
+
 .title-icon {
   vertical-align: middle;
-  margin-right: 8px; /* Adjust this value to control spacing between the icon and the text */
-  width: 40px; /* Adjust this value to control the width of the icons */
-  height: auto; /* This will maintain the aspect ratio of the icons */
+  margin-right: 8px;
+  /* Adjust this value to control spacing between the icon and the text */
+  width: 40px;
+  /* Adjust this value to control the width of the icons */
+  height: auto;
+  /* This will maintain the aspect ratio of the icons */
 }
 
 @keyframes breathing-border {
+
   0%,
   100% {
     border-color: transparent;
   }
+
   50% {
     border-color: white;
   }
 }
+
 @keyframes breathing-gradient {
+
   0%,
   100% {
-    background-image: linear-gradient(
-      to right,
-      #007a7a,
-      #00927f,
-      #006f85
-    ); /* Normal state gradient */
+    background-image: linear-gradient(to right,
+        #007a7a,
+        #00927f,
+        #006f85);
+    /* Normal state gradient */
   }
+
   50% {
     background-image: linear-gradient(to right, #007a7a, #007a7a, #007a7a);
   }
 }
+
 @keyframes shifting-gradient {
+
   0%,
   100% {
     background-size: 200% 100%;
     background-position: right bottom;
   }
+
   50% {
     background-size: 200% 100%;
     background-position: left bottom;
@@ -323,10 +313,12 @@ export default defineComponent({
   margin-bottom: 1.6rem;
   color: #6ebaba;
 }
+
 .pen-underline-1 {
   position: relative;
   /* cursor: pointer; */
-  color: #51ffff; /* Or any other color you prefer for the text */
+  color: #51ffff;
+  /* Or any other color you prefer for the text */
   text-decoration: none;
   background-repeat: repeat-x;
   background-position: bottom;
@@ -336,18 +328,22 @@ export default defineComponent({
 .pen-underline-1::after {
   content: "";
   position: absolute;
-  bottom: -115px; /* Adjust the distance of the underline from the text */
+  bottom: -115px;
+  /* Adjust the distance of the underline from the text */
   left: 0;
   right: 0;
-  height: 230px; /* Thickness of the pen underline */
+  height: 230px;
+  /* Thickness of the pen underline */
   background-image: url("src/assets/underline-2.svg");
   background-repeat: repeat-x;
   background-size: 100% 100%;
 }
+
 .pen-underline-2 {
   position: relative;
   /* cursor: pointer; */
-  color: #51ffff; /* Or any other color you prefer for the text */
+  color: #51ffff;
+  /* Or any other color you prefer for the text */
   text-decoration: none;
   background-repeat: repeat-x;
   background-position: bottom;
@@ -359,23 +355,29 @@ export default defineComponent({
     /* Increase viewport height */
     height: 250vh;
   }
+
   .text-titles {
     font-size: 2rem;
   }
+
   .title-item {
     font-size: 6rem;
   }
+
   .timeline-image {
     /* Hide the images */
     width: 400px;
     left: 40px;
   }
+
   .timeline-indicator {
     left: 550px;
   }
+
   .timeline::before {
     left: 550px;
   }
+
   .text-content {
     margin-left: 600px;
   }
@@ -390,6 +392,7 @@ export default defineComponent({
   .text-titles {
     font-size: 2rem;
   }
+
   .title-item {
     font-size: 5rem;
   }
@@ -400,23 +403,29 @@ export default defineComponent({
     /* Increase viewport height */
     height: 280vh;
   }
+
   .timeline-image {
     /* Hide the images */
     width: 350px;
     left: 40px;
   }
+
   .timeline-indicator {
     left: 400px;
   }
+
   .timeline::before {
     left: 400px;
   }
+
   .text-content {
     margin-left: 450px;
   }
+
   .title-item {
     font-size: 4rem;
   }
+
   .subtitle-item {
     font-size: 2.5rem;
   }
@@ -427,33 +436,40 @@ export default defineComponent({
     /* Increase viewport height */
     height: 170vh;
   }
+
   .timeline-image {
     /* Hide the images */
     display: none;
   }
+
   .timeline::before,
   .timeline-indicator {
     /* Adjust the position of the timeline line and indicators */
     left: 50px;
   }
+
   .timeline-item {
     /* Adjust spacing between items */
     margin-bottom: 100px;
   }
+
   .text-content {
     /* Adjust margin for text content */
     font-size: large;
     margin-left: 100px;
     width: 70%;
   }
+
   .title,
   .text-body {
     /* Increase text size for better readability */
     font-size: 1.2em;
   }
+
   .title-item {
     font-size: 3.5rem;
   }
+
   .subtitle-item {
     font-size: 2rem;
   }
@@ -464,59 +480,71 @@ export default defineComponent({
     /* Increase viewport height */
     height: 190vh;
   }
+
   .timeline-image {
     /* Hide the images */
     display: none;
   }
+
   .timeline::before,
   .timeline-indicator {
     /* Adjust the position of the timeline line and indicators */
     left: 50px;
   }
+
   .timeline-item {
     /* Adjust spacing between items */
     margin-bottom: 100px;
   }
+
   .text-content {
     /* Adjust margin for text content */
     font-size: large;
     margin-left: 100px;
     width: 70%;
   }
+
   .title,
   .text-body {
     /* Increase text size for better readability */
     font-size: 1.2em;
   }
+
   .agenda-button {
     width: 400px;
   }
 }
+
 @media (max-width: 450px) {
   .component-container {
     /* Increase viewport height */
     height: 210vh;
     overflow: hidden;
   }
+
   .timeline-image {
     /* Hide the images */
     display: none;
   }
+
   .timeline::before,
   .timeline-indicator {
     /* Adjust the position of the timeline line and indicators */
     left: 50px;
   }
+
   .timeline-item {
     /* Adjust spacing between items */
     margin-bottom: 100px;
   }
+
   .text-content {
     /* Adjust margin for text content */
     font-size: large;
     margin-left: 100px;
     width: 70%;
   }
+
   .title,
   .text-body {
     /* Increase text size for better readability */
@@ -530,21 +558,49 @@ export default defineComponent({
     height: 235vh;
     overflow: hidden;
   }
+
   .text-titles {
     margin-bottom: 60px;
   }
+
   .agenda-button {
     width: 300px;
   }
 }
+
 @media (max-width: 375px) {
   .component-container {
     /* Increase viewport height */
     height: 310vh;
     overflow: hidden;
   }
+
   .text-titles {
     margin-bottom: 60px;
   }
+}
+
+@media (max-height: 1000px) {
+
+
+  .component-container {
+    height: 250vh;
+
+  }
+}
+
+@media (max-height: 875px) {
+
+  .component-container {
+    height: 280vh;
+
+  }
+}
+@media (max-height: 785px) {
+
+.component-container {
+  height: 295vh;
+
+}
 }
 </style>
