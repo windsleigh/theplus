@@ -1,7 +1,7 @@
 <template>
   <div id="contact" class="component-container">
     <div class="title">
-      <h2>Contactanos</h2>
+      <h2>Contáctanos</h2>
     </div>
     <div class="parent">
       <div class="content-wrapper">
