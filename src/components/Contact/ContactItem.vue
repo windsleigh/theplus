@@ -433,4 +433,13 @@ export default {
 
 }
 }
+
+@media (max-height: 750px) {
+
+
+.component-container {
+  height: 130vh;
+
+}
+}
 </style>

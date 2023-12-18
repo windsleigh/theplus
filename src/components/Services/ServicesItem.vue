@@ -448,7 +448,13 @@ onMounted(() => {
 
 
 .component-container {
-  height: 120vh;
+  height: 170vh;
+
+}
+}
+@media (max-height: 720px) {
+.component-container {
+  height: 190vh;
 
 }
 }
