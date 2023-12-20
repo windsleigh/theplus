@@ -24,9 +24,9 @@
 
               <a href="https://www.linkedin.com/company/the-plus-agc/">
                 <i class="fab fa-linkedin icon"></i>
-                LinkedIn/ThePlusAgc
+                LinkedIn/ThePlusAGC
               </a>
-              <a href="">
+              <a href="https://wa.me/+56959628065/?text=Contacta a ThePlusAGC">
                 <i class="fab fa-whatsapp icon"></i>
                 +56 9 5962 8065
               </a>
