@@ -76,7 +76,7 @@
           <div class="contact-details">
             <div class="info">
               <img
-                src="src/assets/logo-plus2.png"
+                src="/src/assets/logo-plus2.png"
                 alt="Logo"
                 class="logo-image"
               />
