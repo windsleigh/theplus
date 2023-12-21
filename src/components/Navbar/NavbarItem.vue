@@ -2,7 +2,7 @@
   <div :class="['navbar-container', { scrolled: isScrolled }]">
     <div class="logo">
       <router-link to="/">
-        <img src="src/assets/logo-p-50.png" alt="The Plus" />
+        <img src="/src/assets/logo-p-50.png" alt="The Plus" />
       </router-link>
     </div>
     <div class="nav-links desktop-nav">
