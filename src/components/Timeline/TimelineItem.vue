@@ -121,7 +121,7 @@ export default defineComponent({
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@500&display=swap");
 
 .component-container {
-  height: 235vh;
+  height: 220vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -285,7 +285,7 @@ export default defineComponent({
 .agenda-button {
   position: relative;
   overflow: hidden;
-  bottom: 70px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -350,10 +350,10 @@ export default defineComponent({
   background-size: 5px 2px;
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1715px) {
   .component-container {
     /* Increase viewport height */
-    height: 250vh;
+    height: 225vh;
   }
 
   .text-titles {
@@ -386,7 +386,7 @@ export default defineComponent({
 @media (max-width: 1280px) {
   .component-container {
     /* Increase viewport height */
-    height: 280vh;
+    height: 240vh;
   }
 
   .text-titles {
@@ -401,7 +401,7 @@ export default defineComponent({
 @media (max-width: 1097px) {
   .component-container {
     /* Increase viewport height */
-    height: 280vh;
+    height: 250vh;
   }
 
   .timeline-image {
@@ -431,10 +431,10 @@ export default defineComponent({
   }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 900px) {
   .component-container {
     /* Increase viewport height */
-    height: 170vh;
+    height: 150vh;
   }
 
   .timeline-image {
@@ -475,10 +475,11 @@ export default defineComponent({
   }
 }
 
+
 @media (max-width: 600px) {
   .component-container {
     /* Increase viewport height */
-    height: 190vh;
+    height: 130vh;
   }
 
   .timeline-image {
@@ -584,15 +585,15 @@ export default defineComponent({
 
 
   .component-container {
-    height: 250vh;
+    height: 150vh;
 
   }
 }
 
-@media (max-height: 875px) {
+@media (max-height: 975px) {
 
   .component-container {
-    height: 280vh;
+    height: 180vh;
 
   }
 }
