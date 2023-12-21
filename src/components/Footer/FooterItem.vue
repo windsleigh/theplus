@@ -40,7 +40,7 @@
         <div class="footerCopyright">
           <!-- Copyright info -->
           <p></p>
-        </div>@{{ currentYear }} Site - All rights reserved
+        </div>
       </div>
     </div>
   </div>
