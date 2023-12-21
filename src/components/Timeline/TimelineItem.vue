@@ -11,11 +11,11 @@
     </div>
     <ul class="timeline">
       <li class="timeline-item">
-        <img src="timeline_assets/timeline_1.png" alt="Timeline Step 1" class="timeline-image" />
+        <img src="/timeline_assets/timeline_1.png" alt="Timeline Step 1" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img src="timeline_assets/icon_2.png" alt="Icon 1" class="title-icon" />Agenda una Reunión
+            <img src="/timeline_assets/icon_2.png" alt="Icon 1" class="title-icon" />Agenda una Reunión
           </h3>
           <p class="text-body">
             Contáctanos para agendar una reunión, para generar el mejor plan
@@ -24,11 +24,11 @@
         </div>
       </li>
       <li class="timeline-item">
-        <img src="timeline_assets/timeline_2.png" alt="Timeline Step 2" class="timeline-image" />
+        <img src="/timeline_assets/timeline_2.png" alt="Timeline Step 2" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img src="timeline_assets/icon_1.png" alt="Icon 2" class="title-icon" />Recibe un Plan Personalizado
+            <img src="/timeline_assets/icon_1.png" alt="Icon 2" class="title-icon" />Recibe un Plan Personalizado
           </h3>
           <p class="text-body">
             Recibirás un plan personalizado diseñado específicamente para
@@ -37,11 +37,11 @@
         </div>
       </li>
       <li class="timeline-item">
-        <img src="timeline_assets/timeline_3.png" alt="Timeline Step 3" class="timeline-image" />
+        <img src="/timeline_assets/timeline_3.png" alt="Timeline Step 3" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img src="timeline_assets/icon_3.png" alt="Icon 3" class="title-icon" />Trabaja con Nosotros
+            <img src="/timeline_assets/icon_3.png" alt="Icon 3" class="title-icon" />Trabaja con Nosotros
           </h3>
           <p class="text-body">
             Cuéntanos sobre tu negocio para así comernos a tu competencia.
@@ -49,11 +49,11 @@
         </div>
       </li>
       <li class="timeline-item">
-        <img src="timeline_assets/timeline_4.png" alt="Timeline Step 4" class="timeline-image" />
+        <img src="/timeline_assets/timeline_4.png" alt="Timeline Step 4" class="timeline-image" />
         <div class="timeline-indicator"></div>
         <div class="text-content">
           <h3 class="title">
-            <img src="timeline_assets/icon_4.png" alt="Icon 4" class="title-icon" />
+            <img src="/timeline_assets/icon_4.png" alt="Icon 4" class="title-icon" />
             Aumenta tus Ingresos
           </h3>
           <p class="text-body">
