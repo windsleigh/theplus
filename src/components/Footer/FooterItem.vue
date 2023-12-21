@@ -39,8 +39,8 @@
       <div class="footerBelow">
         <div class="footerCopyright">
           <!-- Copyright info -->
-          <p>@{{ currentYear }} Site - All rights reserved</p>
-        </div>
+          <p></p>
+        </div>@{{ currentYear }} Site - All rights reserved
       </div>
     </div>
   </div>
